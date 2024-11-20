@@ -1,5 +1,7 @@
 import pygame
 
+
+#initial variables
 WIDTH = 700
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 pygame.display.set_caption("A* Pathfinding Visualizer")
@@ -16,6 +18,7 @@ GREY = (128, 128, 128)
 TURQUOISE = (64, 224, 208)
 
 class Spot:
+	#constructor
 	def __init__(self, row, col, width, total_rows):
 		self.row = row
 		self.col = col
@@ -26,6 +29,7 @@ class Spot:
 		self.width = width
 		self.total_rows = total_rows
 
+	#heres a bunch of getters and setters
 	def get_pos(self):
 		return self.row, self.col
 
@@ -92,15 +96,6 @@ def h(p1, p2):
 	return abs(x1 - x2) + abs(y1 - y2)
 
 
-def reconstruct_path(came_from, current, draw):
-	while current in came_from:
-		current = came_from[current]
-		current.make_path()
-		draw()
-
-
-
-
 def make_grid(rows, width):
 	grid = []
 	gap = width // rows
@@ -131,7 +126,7 @@ def draw(win, grid, rows, width):
 	draw_grid(win, rows, width)
 	pygame.display.update()
 
-
+#gets the position clicked on to create the walls/start/end
 def get_clicked_pos(pos, rows, width):
 	gap = width // rows
 	y, x = pos
@@ -143,7 +138,7 @@ def get_clicked_pos(pos, rows, width):
 
 
 def main(win, width):
-	ROWS = 50
+	ROWS = 20
 	grid = make_grid(ROWS, width)
 
 	start = None
@@ -186,6 +181,7 @@ def main(win, width):
 					for row in grid:
 						for spot in row:
 							spot.update_neighbors(grid)
+							#the algorithm goes somewhere in here
 
 
 				if event.key == pygame.K_c:
