@@ -90,7 +90,7 @@ class Spot:
 		return False
 
 
-def h(p1, p2):
+def heuristicVal(p1, p2):
 	x1, y1 = p1
 	x2, y2 = p2
 	return abs(x1 - x2) + abs(y1 - y2)
@@ -136,6 +136,8 @@ def get_clicked_pos(pos, rows, width):
 
 	return row, col
 
+def aStar():
+	return
 
 def main(win, width):
 	ROWS = 20
@@ -181,7 +183,7 @@ def main(win, width):
 					for row in grid:
 						for spot in row:
 							spot.update_neighbors(grid)
-							#the algorithm goes somewhere in here
+					#the algorithm goes here
 
 
 				if event.key == pygame.K_c:
