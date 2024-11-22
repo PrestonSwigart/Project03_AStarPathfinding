@@ -1,2 +1,7 @@
 # Project03_AStarPathfinding
-The visualizer for this project was taken from https://github.com/Jefferson-Aggor/a-star/blob/main/a-star.py. I did not use any of the algorithm from this source and I rewrote it to work myself so I could understand it.
+To run this project, you need to install pygame.
+This project uses A* pathfinding to navigate a grid with a custom start, end, and barriers created by the user.
+Most of this was done while following this (https://www.youtube.com/watch?v=JtiK0DOeI4A) tutorial from Tech With Tim
+which was incredibly helpful in learning how it works and why.
+Since diagonal movement was disabled, I used manhattan distance for my heuristics.
+
