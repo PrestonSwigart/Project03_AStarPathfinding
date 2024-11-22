@@ -166,6 +166,7 @@ def aStarAlg(draw, grid, start, end):
 
 		if current == end:
 			reconstruct_path(came_from, end, draw)
+			end.make_end()
 			return True
 
 		for neighbor in current.neighbors:
